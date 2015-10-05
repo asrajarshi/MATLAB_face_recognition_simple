@@ -1,0 +1,24 @@
+function out=load_database()
+  %% fdfd
+  myDir = 'C:\Users\asrajarshi\Desktop\Project\Photos\resized phots\';
+    ext_img = '*.jpg';
+    a = dir([myDir ext_img]);
+    nfile = max(size(a)) ;
+    %[a,index] = sort_nat(aa);
+    %% v ff   
+    t =0;
+    j=0;
+    i = 0;
+    while i < 10
+        i = i + 1;
+        while t < nfile
+          j = j + 1;
+          myimg(i).my_img(j).img = rgb2gray(imread([myDir a(j).name]));
+          t = t +1;
+          if j == 10
+              j = 0;
+              break;
+          end
+        end
+    end
+out = myimg;
